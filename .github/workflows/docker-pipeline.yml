@@ -23,7 +23,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Construir las imágenes con el tag
-        working-directory: videos-service
         run: |
           docker build -t luisardiles/videos-service:latest .
           docker tag luisardiles/videos-service:latest luisardiles/videos-service:${{ github.sha }}
